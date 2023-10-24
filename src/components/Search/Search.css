@@ -1,0 +1,137 @@
+.page__search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--dark-color);
+}
+
+.search__container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2F2F2F;
+  max-width: 1140px;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  border-radius: 9px;
+  gap: 29px;
+  padding-right: 30px;
+  margin-top: 70px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #424242;
+}
+
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  border-right: 1px solid grey;
+  padding-right: 30px;
+  padding-left: 19px;
+
+}
+
+input::placeholder {
+  background: url(../../images/search.svg) no-repeat;
+  background-position: start;
+  background-size: contain;
+  height: 22px;
+  padding-left: 38px;
+  padding-bottom: 13px;
+
+
+}
+
+.search__input {
+  background-color: transparent;
+  border: none;
+  width: 90%;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--second-font-color);
+
+
+}
+
+
+
+.search__submit {
+  width: 80px;
+  height: 34px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  background-color: #4285F4;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: opacity .3s linear;
+  color: white;
+}
+
+.search__submit_disabled {
+  background-color: #4285F4;
+  pointer-events: none;
+  border: 2px solid rebeccapurple;
+}
+
+@media (max-width: 1140px) {
+  .search__container {
+    width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
+  }
+}
+
+@media screen and (max-width:768px) {
+  .search__container {
+    width: calc(320px + (708 - 320) * ((100vw - 320px)/(768 - 320)));
+  }
+
+  .search__form {
+    margin-right: 0px;
+    margin-bottom: 13px;
+    border-right: 0;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .search__container {
+    width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 55px 0;
+    background-color: var(--dark-color);
+
+  }
+
+  .search__form {
+    background-color: #2F2F2F;
+    padding: 19px 19px 19px 19px;
+    border-radius: 10px;
+  }
+
+  input::placeholder {
+    font-size: 14px;
+    background-image: none;
+    padding: 0;
+
+
+  }
+
+  .search__submit {
+    font-size: 11px;
+    line-height: 18px;
+
+  }
+
+  .search__input {
+    font-size: 14px;
+  }
+
+}

@@ -1,0 +1,44 @@
+.page__content {
+ max-width: 1280px;
+ width: 100%;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: var( --dark-color);
+}
+:root{
+  --dark-color: #202020;
+  --blue-color: #073042;
+  --first-font-color: #FFFFFF;
+  --second-font-color: #8B8B8B;
+  --green-color: #3DDC84;
+
+}
+/* @media (max-width: 1140px) {
+    .page__content {
+      width: 1140px;
+    }
+  
+  }
+  @media (max-width: 1040px) {
+    .page__content {
+      width: 1040px;
+    }
+  
+  }
+
+@media (max-width: 767px) {
+    .page__content {
+      width: 767px;
+    }
+  
+  }
+  
+  /* Медиа-запрос для экрана шириной 320px */
+  /* @media (max-width: 320px) {
+    .page__content {
+      width: 320px;
+    }
+  } */ 

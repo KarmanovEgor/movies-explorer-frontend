@@ -1,0 +1,265 @@
+.header {
+  max-width: 1280px;
+  width: 100%;
+  
+}
+.header-blue{
+  background-color: var(--blue-color);
+}
+.header-black{
+  background-color: var(--dark-color);
+}
+.header__container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+  
+    background-color: transparent;
+  }
+
+.header__logo {
+  margin: 0;
+}
+
+.header__navigation {
+  display: flex;
+  justify-content: center;
+  max-width: 1057px;
+  width: 100%;
+}
+
+.header__links_navigation{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  max-width: 1057px;
+  width: 100%;
+  
+}
+
+.header__links {
+  color: white;
+  font-size: 13px;
+}
+.header__link{
+  text-decoration: none;
+  color: var(--first-font-color);
+}
+.header__links-main {
+  display: none;
+}
+.header__links_movies{
+  max-width: 211px;
+  width: 100%;
+  padding: 0;
+}
+.header__links_movies-list{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+.header__links_movies-list-active {
+  display: none;
+}
+.header__links_profile{
+  max-width: 100px;
+  width: 100%;
+}
+.header__links_profile-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+ 
+} 
+.header__logo-profile {
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  background-color: transparent;
+  background-image: url('../../images/logo__profile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+}
+.header__button {
+  border: none;
+  background-color: transparent;
+  
+}
+.header__links-navigation_login{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  max-width: 1057px;
+  width: 100%;
+}
+@media (max-width: 1140px) {
+  .header__container {
+    width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
+  }
+  .header__links_navigation{
+    width: calc(320px + (1015 - 320) * ((100vw - 320px)/(1140 - 320)));
+    
+  }
+  .header__links-navigation_login{
+    width: calc(320px + (1015 - 320) * ((100vw - 320px)/(1140 - 320)));
+  }
+}
+/* Медиа-запрос для экрана шириной 1024px */
+@media (max-width: 1023px) {
+  .header__container {
+    width: calc(320px + (960 - 320) * ((100vw - 320px)/(1024 - 320)));
+  }
+  .header__links_navigation{
+    width: calc(320px + (860 - 320) * ((100vw - 320px)/(1024 - 320)));
+    
+  }
+  .header__links-navigation_login{
+    width: calc(320px + (860 - 320) * ((100vw - 320px)/(1024 - 320)));
+  }
+}
+
+/* Медиа-запрос для экрана шириной 768px */
+@media (max-width: 769px) {
+  .header__container {
+    width: calc(320px + (708 - 320) * ((100vw - 320px)/(768 - 320)));
+  }
+  .header__navigation{
+    display: flex;
+    justify-content: end;
+    position: relative;
+   
+  }
+  .header__links-navigation_login{
+    max-width: 190px;
+    width: 100%;
+  }
+  .header__links_navigation {
+    position: fixed;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 18px;
+      line-height: 22px;
+      opacity: 0;
+      background-color: var(--dark-color);
+      text-align: center;
+      transform: translate(-50%, -0);
+      top: 0;
+      left: 67%;
+      bottom: 0;
+      max-width: 520px;
+      width: 100%;
+      height: 100vh;
+      z-index: 10;
+      transform: translateX(50%);
+      transition: transform 0.7s ease;
+    }
+    .header__links{
+      font-size: 18px;
+    }
+    .header__links-main {
+      display: block;
+    }
+    .header__links-underline {
+      border-bottom: 1px solid var(--first-font-color); 
+      max-width: 72px;
+      width: 100%;
+    }
+    .header__links_movies-list{
+      align-items: center;
+      justify-content: center;
+      row-gap: 28px;
+    }
+      .header__links_navigation-active {
+        opacity: 1;
+        transform: translateX(-50%);
+      }
+      .header__links_movies-list{
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        list-style: none;
+        padding-bottom: 621px;
+      }
+   
+}
+
+
+/* Медиа-запрос для экрана шириной 320px */
+@media (max-width: 320px) {
+  .header__container {
+    width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
+  }
+  .header__links_navigation {
+    max-width: 320px;
+      width: 100%;
+      left: 50%;
+      
+  }
+  .header__links_movies-list{
+    padding-bottom: 444px;
+    padding-top: 159px;
+   }
+}
+
+.header__signup {
+  margin-right: 30px;
+  text-decoration: none;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--first-font-color);
+  transition: opacity .3s linear;
+}
+
+@media screen and (max-width:768px) {
+  .header__signup {
+    margin-right: 14px;
+    font-size: 10px;
+  }
+}
+
+.header__signin {
+  text-align: center;
+  padding-top: 8px;
+  background-color: #3DDC84;
+  display: block;
+  border-radius: 3px;
+  width: 76px;
+  min-height: 32px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  transition: opacity .3s linear;
+}
+
+@media screen and (max-width:768px) {
+  .header__signin {
+    padding-top: 4px;
+    width: 54px;
+    min-height: 26px;
+    font-size: 10px;
+  }
+}
