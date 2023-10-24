@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Portfolio.css";
 
-
 export default function Portfolio() {
   return (
     <section className="portfolio">
@@ -17,7 +16,6 @@ export default function Portfolio() {
               <p className="portfolio__text">Статичный сайт</p>
               <div className="portfolio__arrow"></div>
             </Link>
-            
           </li>
           <li className="portfolio__list-links">
             <Link

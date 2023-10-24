@@ -1,21 +1,19 @@
 import "./MoviesCard.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import moviesApi from '../utils/MoviesApi'
+import moviesApi from "../utils/MoviesApi";
 
 export default function MoviesCard({ onDelete, addMovie, data, savedMovies }) {
-
   const [click, setClick] = useState(false);
 
-console.log(data)
-
+  console.log(data);
 
   function onClick() {
-      if (click === false){
-        setClick(true)
-      } else {
-        setClick(false)
-      }
+    if (click === false) {
+      setClick(true);
+    } else {
+      setClick(false);
+    }
   }
 
   function convertTime(duration) {
@@ -29,17 +27,10 @@ console.log(data)
   }
 
   return (
-
     <li className="movie__card">
       <article className="movie__article">
         <Link to={data.trailerLink} target="_blank">
-          <img
-            src={
-              data.image.url
-            }
-            alt={data.name}
-            className="movie__image"
-          />
+          <img src={data.image.url} alt={data.name} className="movie__image" />
         </Link>
         <div className="movie__card">
           <div className="movie__text">
@@ -48,12 +39,11 @@ console.log(data)
               {convertTime(data.duration)}
             </span>
           </div>
-            <button
-              type="button"
-              className={`movie__save ${click ? "movie__save_active" : ""}`}
-              onClick={onClick}
-            ></button>
-          
+          <button
+            type="button"
+            className={`movie__save ${click ? "movie__save_active" : ""}`}
+            onClick={onClick}
+          ></button>
         </div>
       </article>
     </li>

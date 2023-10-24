@@ -1,4 +1,3 @@
-
 .movie__card {
     width: 100%;
     min-height: 68px;
@@ -7,9 +6,11 @@
     background-color: var(--dark-color);
 
 }
+
 .movie__article {
     width: 100%;
 }
+
 .movie__text {
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@
     font-weight: 500;
     line-height: normal;
     color: var(--first-font-color);
- 
+
     box-sizing: border-box;
     padding-bottom: 29px;
     border-bottom: 1px solid #424242;
@@ -55,7 +56,7 @@
     border-radius: 50%;
     background-image: url(../../images/likedis.svg);
     background-position: center;
-   
+
     background-repeat: no-repeat;
     cursor: pointer;
     transition: opacity .3s linear;

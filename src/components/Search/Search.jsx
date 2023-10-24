@@ -1,8 +1,7 @@
-
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import "./Search.css";
 
-export default function Search({ isCheck, searchMovies, setIsError, isError  }) {
+export default function Search({ isCheck, searchMovies, setIsError, isError }) {
   function onSubmit(evt) {
     evt.preventDefault();
     if (evt.target.search.value) {
