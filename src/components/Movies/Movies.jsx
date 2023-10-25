@@ -6,6 +6,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
+
 export default function Movies() {
   const [isCheck, setIsCheck] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,16 +31,12 @@ export default function Movies() {
 
   return (
     <>
-      <Header />
-      <>
-        <Search
-          isCheck={isCheck}
-          searchMovies={searchMovies}
-          setIsError={setIsError}
-        />
-        <MoviesCardList isLoading={isLoading} movies={movies} />
-      </>
-      <Footer />
+    <Header />
+    <>
+      <Search isCheck={isCheck} searchMovies={searchMovies} setIsError={setIsError} />
+      <MoviesCardList isLoading={isLoading} movies={movies} />
+    </>
+    <Footer />
     </>
   );
 }

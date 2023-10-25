@@ -6,9 +6,7 @@ export default function Footer() {
   return (
     <section className="footer">
       <div className="footer__container">
-        <div className="footer__title">
-          Учебный проект Яндекс.Практикум х BeatFilm.
-        </div>
+        <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
         <div className="footer__lists">
           <div className="footer__date">@ {currentYear}</div>
           <ul className="footer__list">

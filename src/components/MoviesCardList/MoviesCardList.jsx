@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import MoviesCard from "../MoviesCard/MoviesCard";
-import Preloader from "../Preloader/Preloader";
-import "./MoviesCardList.css";
+import MoviesCard from "../MoviesCard/MoviesCard"
+import Preloader from "../Preloader/Preloader"
+import './MoviesCardList.css'
+
 
 export default function MoviesCardList({ movies, isLoading }) {
   const [visibleCardsCount, setVisibleCardsCount] = useState(0);
@@ -39,28 +40,22 @@ export default function MoviesCardList({ movies, isLoading }) {
   return (
     <section className="movies page__movies">
       <div className="movies__container">
-        <ul className="movies__lists">
-          {isLoading ? (
-            <Preloader />
-          ) : movies.length > 0 ? (
-            movies
-              .slice(0, visibleCardsCount)
-              .map((movie) => (
-                <MoviesCard key={movie.id} data={movie} savedMovies={[]} />
-              ))
-          ) : (
-            <p className="movies__text">Фильмы не найдены</p>
-          )}
-        </ul>
-        {visibleCardsCount < totalCardsCount && (
-          <button
-            type="button"
-            className="movies__more"
-            onClick={handleMoreButtonClick}
-          >
-            Еще
-          </button>
+      <ul className="movies__lists">
+        {isLoading ? (
+          <Preloader />
+        ) : movies.length > 0 ? (
+          movies.slice(0, visibleCardsCount).map((movie) => (
+            <MoviesCard key={movie.id} data={movie} savedMovies={[]} />
+          ))
+        ) : (
+          <p className="movies__text">Фильмы не найдены</p>
         )}
+      </ul>
+      {visibleCardsCount < totalCardsCount && (
+        <button type="button" className="movies__more" onClick={handleMoreButtonClick}>
+          Еще
+        </button>
+      )}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@
     width: 100%;
     padding-top: 97px;
     padding-bottom: 98px;
-
+    
 
 }
 
@@ -74,7 +74,6 @@
     margin: 0;
     text-decoration: none;
 }
-
 .aboutMe__image {
     width: 270px;
     height: 327px;
@@ -82,49 +81,42 @@
 
 @media (max-width: 1140px) {
     .aboutMe__container {
-        width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
-        padding-top: 87px;
+      width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
+     padding-top: 87px;
     }
 }
-
 @media (max-width: 768px) {
     .aboutMe__container {
-        width: calc(320px + (668 - 320) * ((100vw - 320px)/(768 - 320)));
-        column-gap: 20px;
-        justify-content: center;
-        padding-bottom: 72px;
+      width: calc(320px + (668 - 320) * ((100vw - 320px)/(768 - 320)));
+      column-gap: 20px;
+      justify-content: center;
+      padding-bottom: 72px;
     }
-
     .aboutMe__subtitle {
         font-size: 40px;
         line-height: 40px;
         letter-spacing: 0.2px;
         padding-bottom: 17px;
     }
-
     .aboutMe__text {
         width: calc(320px + (364 - 320) * ((100vw - 320px)/(768 - 320)));
     }
-
     .aboutMe__image {
         width: 255px;
         height: 327px;
-
+      
     }
-
-    .aboutMe__columns {
+    .aboutMe__columns{
         flex-wrap: wrap;
         align-content: space-between;
         justify-content: space-between;
     }
-
     .aboutMe__job {
         font-size: 12px;
         line-height: 18px;
         padding-bottom: 18px;
         letter-spacing: 0.35px;
     }
-
     .aboutMe__text {
         font-size: 12px;
         line-height: 18px;
@@ -133,26 +125,22 @@
         letter-spacing: 0.56px;
     }
 }
-
 @media (max-width: 652px) {
     .aboutMe__image {
         order: -2;
     }
 }
-
 @media (max-width: 320px) {
     .aboutMe__container {
         width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
-
+     
     }
-
     .aboutMe__text {
         width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
     }
-
     .aboutMe__image {
-        width: 292px;
+    width: 292px;
         height: 352px;
-
+    
     }
 }
