@@ -82,15 +82,21 @@
       height: 36px;
     }
   }
+  @media screen and (max-width: 525px) {
+    .movie__image {
+      max-width: 300px;
+     width: 100%;
+    }
+  }
   @media (max-width: 320px) {
     .movies__container {
         width: calc(300px + (100vw - 320px) * (300 - 320) / (768 - 320));
      
     }
-    .movie__image {
+    /* .movie__image {
       max-width: 300px;
      width: 100%;
-    }
+    } */
     .movies__lists {
       grid-template-columns: repeat(auto-fit, 300px);
       column-gap: 30px;

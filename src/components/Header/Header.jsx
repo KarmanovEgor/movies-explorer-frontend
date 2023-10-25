@@ -15,12 +15,8 @@ export default function Header({ name, dataUser, loggedIn }) {
     <header className={`header ${activeBurger ? 'header_active' : ''} ${pathname === "/" ? "header-blue" : "header-black"}`}>
    <div className="header__container">
    <Link to={'/'} className="login__link-home">
-   <img
-        className="header__logo"
-        title="логотип"
-        alt="логотип"
-        src={logo}
-      /></Link>
+
+      </Link>
       {name === 'home' && !loggedIn ?
         <nav>
           <ul className='header__links-navigation_login'>
