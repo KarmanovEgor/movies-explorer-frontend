@@ -109,7 +109,7 @@
     .aboutMe__columns{
         flex-wrap: wrap;
         align-content: space-between;
-        justify-content: space-between;
+        justify-content: center;
     }
     .aboutMe__job {
         font-size: 12px;
@@ -125,10 +125,11 @@
         letter-spacing: 0.56px;
     }
 }
-@media (max-width: 652px) {
+@media (max-width: 695px) {
     .aboutMe__image {
         order: -2;
     }
+
 }
 @media (max-width: 320px) {
     .aboutMe__container {

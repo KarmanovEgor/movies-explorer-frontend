@@ -34,8 +34,8 @@ console.log(data)
       <article className="movie__article">
         <Link to={data.trailerLink} target="_blank">
           <img
-            src={
-              data.image.url
+            src={`https://api.nomoreparties.co${
+              data.image.url}`
             }
             alt={data.name}
             className="movie__image"

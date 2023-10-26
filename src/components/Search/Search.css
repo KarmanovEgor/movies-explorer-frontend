@@ -109,6 +109,15 @@ input::placeholder {
     margin-bottom: 0px;
     border-right: 0;
   }
+  .search__submit {
+    font-size: 11px;
+  }
+  input::placeholder {
+  
+    padding-bottom: 1px;
+  
+  
+  }
 }
 
 
