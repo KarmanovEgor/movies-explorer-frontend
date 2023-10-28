@@ -1,5 +1,4 @@
-.techs {
-    max-width: 1280px;
+.page__techs {
     width: 100%;
     background-color: #272727;
     display: flex;
@@ -9,18 +8,18 @@
     max-width: 1140px;
     width: 100%;
     box-sizing: border-box;
-    padding-top: 96px;
-    padding-bottom: 110px;
+    padding-top: 101px;
+    padding-bottom: 100px;
     
 }
 .techs__subtitle {
-    margin: 0 0 29px 0;
+    margin: 0 0 26px 0;
     text-align: center;
     font-size: 50px;
     font-weight: 400;
     line-height: 58px;
-    letter-spacing: -0.08px;
-    padding-top: 87px;
+    letter-spacing: -1.75px;
+    padding-top: 90px;
     color: var(--first-font-color)
   }
   .techs__text {
@@ -31,7 +30,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.6px;
     color: var(--first-font-color)
   }
   .techs__list {
@@ -55,7 +54,7 @@
     background-color: #303030;
     font-size: 14px;
     Line-height: 16.94px;
-    letter-spacing:-4%
+    letter-spacing:-1px;
   }
 
 
@@ -67,8 +66,8 @@
 @media (max-width: 768px) {
     .techs__container {
       width: calc(320px + (668 - 320) * ((100vw - 320px)/(768 - 320)));
-      padding-top: 67px;
-      padding-bottom: 90px;
+      padding-top: 91px;
+      padding-bottom: 88px;
     }
     .techs__list {
     width: calc(178px + (648 - 178) * ((100vw - 320px)/(768 - 320)));
@@ -77,29 +76,39 @@
 }
 .techs__subtitle {
   margin: 0 0 24px 0;
-  padding-top: 77px;
+  padding-top: 80px;
+  margin-bottom: 21px;
 }
 .techs__text {
-  letter-spacing: -0.9px;
+  letter-spacing: -1.59px;
   line-height: 18px;
   margin-bottom: 82px;
 }
 }
 @media (max-width: 320px) {
     .techs__container {
-        width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
+        width: calc(284px + (100vw - 320px) * (284 - 320) / (768 - 320));
+        padding-top: 48px;
      
     }
     .techs__subtitle {
         font-size: 30px;
         font-weight: 400;
         line-height: 36.31px;
+        padding-top: 60px;
+        letter-spacing: -0.9px;
+        margin-bottom: 24px;
     }
     .techs__text {
         font-size: 11px;
         font-weight: 400;
         line-height: 16px;
-        letter-spacing: -0.64px;
+        letter-spacing: -0.25px;
         width: calc(292px + (460 - 292) * ((100vw - 320px)/(768 - 320)));
+        margin-bottom: 48px;
     }
+    .techs__list {
+
+      row-gap: 6px;
+  }
 }

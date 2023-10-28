@@ -7,6 +7,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-left: 26px;
+
 }
 .checkbox.style-e input {
   position: absolute;
@@ -14,6 +16,7 @@
   cursor: pointer;
   height: 0;
   width: 0;
+  
 }
 .checkbox.style-e input:checked ~ .checkbox__checkmark {
   background-color: #343434;
@@ -37,6 +40,7 @@
   background-color: #343434;
   transition: background-color 0.25s ease;
   border-radius: 11px;
+  
 }
 .checkbox.style-e .checkbox__checkmark:after {
   content: "";
@@ -57,4 +61,29 @@
   line-height: 18px;
   font-weight: 400;
   transition: color 0.25s ease;
+  
 }
+@media screen and (max-width:768px) {
+  .checkbox.style-e{
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width:550px) {
+  .checkbox.style-e{
+ 
+  background-color: var(--dark-color);
+  }
+  }
+
+  @media screen and (max-width:320px) {
+    .checkbox.style-e .checkbox__body {
+      color: var(--first-font-color);
+      line-height: 1.4;
+      font-size: 11px;
+      line-height: 18px;
+      
+    }
+    .checkbox.style-e{
+      margin-left: 0px;
+    }
+  }

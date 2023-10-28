@@ -27,7 +27,7 @@
     grid-template-columns: repeat(auto-fit, 270px);
     justify-content: center;
     column-gap: 20px;
-    row-gap: 34px;
+    row-gap: 38px;
     box-sizing: border-box;
     padding-top: 73px;
     padding-bottom: 62px;
@@ -75,7 +75,8 @@
     .movies__lists {
       padding-top: 112px;
       column-gap: 30px;
-      row-gap: 25px
+      row-gap: 28px;
+      padding-bottom: 58px;
     }   
      .movies__more {
       width: 320px;
@@ -84,28 +85,32 @@
   }
   @media screen and (max-width: 525px) {
     .movie__image {
-      max-width: 300px;
+      max-width: 339px;
      width: 100%;
     }
   }
-  @media (max-width: 320px) {
+  @media (max-width: 350px) {
     .movies__container {
         width: calc(300px + (100vw - 320px) * (300 - 320) / (768 - 320));
-     
     }
-    /* .movie__image {
-      max-width: 300px;
+    .movie__image {
+      height: 168px;
      width: 100%;
-    } */
+    }
     .movies__lists {
       grid-template-columns: repeat(auto-fit, 300px);
       column-gap: 30px;
-      row-gap: 29px;
+      row-gap: 33px;
       padding-top: 0px;
     }
     .movies__more {
       width: 237px;
       height: 34px;
+    }
+  
+    .movei__subtitle {
+      font-size: 12px;
+      font-weight: 500;
     }
   }
   

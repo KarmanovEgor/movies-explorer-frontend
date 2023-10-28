@@ -19,7 +19,7 @@
   }
   .login__submit {
     padding: 0;
-    margin-top: 20px;
+    margin-top: 63px;
     border: none;
     border-radius: 3px;
     width: 100%;
@@ -31,6 +31,9 @@
     background-color: #4285F4;
     cursor: pointer;
     transition: background-color .3s linear;
+  }
+  .login__submit-registr{
+    margin-top: 85px;
   }
   .profile__submit_disabled {
     color: var(--secondary-font-color);
@@ -80,6 +83,7 @@
     line-height: normal;
     color: #FF004C;
   }
+
   
   @media screen and (max-width: 768px) {
     .profile__error-request {
@@ -110,6 +114,9 @@
       }
       .profile__submit {
         font-size: 12px;
+      }
+      .login__link-home {
+        margin: 0 auto;
       }
   }
   

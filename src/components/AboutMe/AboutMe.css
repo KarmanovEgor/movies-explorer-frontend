@@ -1,6 +1,4 @@
-.aboutMe {
-    max-width: 1280px;
-    width: 100%;
+.page__aboutMe {
     background-color: var(--dark-color);
     display: flex;
     justify-content: center;
@@ -9,7 +7,7 @@
 .aboutMe__container {
     max-width: 1140px;
     width: 100%;
-    padding-top: 97px;
+    padding-top: 110px;
     padding-bottom: 98px;
     
 
@@ -19,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-top: 63px;
+    padding-top: 66px;
 }
 
 .aboutMe__blocktext {
@@ -32,12 +30,12 @@
 .aboutMe__subtitle {
     font-size: 50px;
     line-height: 58px;
-    letter-spacing: 0.4px;
+    letter-spacing: -1.9px;
     font-weight: 400;
     color: var(--first-font-color);
     margin: 0;
     box-sizing: border-box;
-    padding-bottom: 22px;
+    padding-bottom: 20px;
 }
 
 .aboutMe__job {
@@ -47,8 +45,8 @@
     color: var(--first-font-color);
     margin: 0;
     box-sizing: border-box;
-    padding-bottom: 26px;
-    letter-spacing: 0.565px;
+    padding-bottom: 24px;
+    letter-spacing: -0.01px;
 }
 
 .aboutMe__text {
@@ -63,7 +61,7 @@
     padding-bottom: 99px;
     max-width: 600px;
     width: 100%;
-    letter-spacing: 0.559px;
+    letter-spacing: 0.0096px;
 }
 
 .aboutMe__link {
@@ -90,54 +88,85 @@
       width: calc(320px + (668 - 320) * ((100vw - 320px)/(768 - 320)));
       column-gap: 20px;
       justify-content: center;
-      padding-bottom: 72px;
+      padding-bottom: 90px;
+      padding-top: 91px;
     }
     .aboutMe__subtitle {
         font-size: 40px;
         line-height: 40px;
-        letter-spacing: 0.2px;
-        padding-bottom: 17px;
+        letter-spacing: -1.5px;
+        padding-bottom: 16px;
     }
     .aboutMe__text {
         width: calc(320px + (364 - 320) * ((100vw - 320px)/(768 - 320)));
+        letter-spacing: -1.5px;
     }
     .aboutMe__image {
         width: 255px;
-        height: 327px;
+        height: 307px;
       
     }
     .aboutMe__columns{
         flex-wrap: wrap;
-        align-content: space-between;
-        justify-content: center;
+        justify-content: space-between;
+        
     }
     .aboutMe__job {
         font-size: 12px;
         line-height: 18px;
-        padding-bottom: 18px;
-        letter-spacing: 0.35px;
+        padding-bottom: 20px;
+        letter-spacing: 0px;
     }
     .aboutMe__text {
         font-size: 12px;
         line-height: 18px;
         font-weight: 400;
-        padding-bottom: 90px;
-        letter-spacing: 0.56px;
+        padding-bottom: 89px;
+        letter-spacing: 0.009px;
     }
 }
 @media (max-width: 695px) {
     .aboutMe__image {
         order: -2;
+        padding-bottom: 40px;
+       
+    }
+    .aboutMe__columns{
+        justify-content: center;
+        
     }
 
 }
 @media (max-width: 320px) {
     .aboutMe__container {
         width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
+        padding-top: 52px;
+        padding-bottom: 69px;
      
+    }
+    .aboutMe__columns{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 60px;
+    }
+    .aboutMe__subtitle {
+        font-size: 30px;
+        line-height: 36.31px;
+        letter-spacing: -1.5px;
+        padding-bottom: 19px;
     }
     .aboutMe__text {
         width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 41px;
+        letter-spacing: 0px;
+    }
+    .aboutMe__job {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 20px;
+        letter-spacing: 0px;
     }
     .aboutMe__image {
     width: 292px;

@@ -4,7 +4,7 @@ import "./AboutMe.css";
 import photo from "../../images/portret.png";
 export default function AboutMe() {
   return (
-    <section className="aboutMe">
+    <section className="aboutMe page__aboutMe">
       <div className="aboutMe__container">
         <Title title="Студент"></Title>
     <div className="aboutMe__columns">

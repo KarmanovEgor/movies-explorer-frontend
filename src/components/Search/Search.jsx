@@ -16,6 +16,7 @@ export default function Search({ isCheck, searchMovies, setIsError, isError  }) 
     <section className="search page__search" onSubmit={onSubmit}>
       <div className="search__container">
         <form className="search__form" name={"SearchForm"}>
+          <div className="search__form-block">
           <input
             type="text"
             name="search"
@@ -26,8 +27,10 @@ export default function Search({ isCheck, searchMovies, setIsError, isError  }) 
           <button type="submit" className="search__submit">
             Найти
           </button>
+          </div>
+          <FilterCheckbox />
         </form>
-        <FilterCheckbox />
+     
       </div>
       {isError && <p>Введите поисковой запрос</p>}
     </section>

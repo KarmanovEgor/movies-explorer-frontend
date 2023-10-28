@@ -40,22 +40,23 @@ export default function MoviesCardList({ movies, isLoading }) {
   return (
     <section className="movies page__movies">
       <div className="movies__container">
-      <ul className="movies__lists">
-        {isLoading ? (
-          <Preloader />
-        ) : movies.length > 0 ? (
-          movies.slice(0, visibleCardsCount).map((movie) => (
-            <MoviesCard key={movie.id} data={movie} savedMovies={[]} />
-          ))
-        ) : (
-          <p className="movies__text">Фильмы не найдены</p>
+        <ul className="movies__lists">
+          {isLoading ? (
+            <Preloader />
+          ) : (
+            movies.slice(0, visibleCardsCount).map((movie) => (
+              <MoviesCard key={movie.id} data={movie} savedMovies={[]} />
+            ))
+          )}
+          {!isLoading && movies.length === 0 && (
+            <p className="movies__text">Фильмы не найдены</p>
+          )}
+        </ul>
+        {visibleCardsCount < totalCardsCount && (
+          <button type="button" className="movies__more" onClick={handleMoreButtonClick}>
+            Еще
+          </button>
         )}
-      </ul>
-      {visibleCardsCount < totalCardsCount && (
-        <button type="button" className="movies__more" onClick={handleMoreButtonClick}>
-          Еще
-        </button>
-      )}
       </div>
     </section>
   );

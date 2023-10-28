@@ -2,7 +2,7 @@ import Title from "../Title/Title";
 import "./Techs.css";
 export default function Techs() {
   return (
-   <section className="techs">
+   <section className="techs page__techs">
     <div className="techs__container">
         <Title title="Технологии"></Title>
         <h3 className="techs__subtitle">7 технологий</h3>

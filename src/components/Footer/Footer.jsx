@@ -4,9 +4,11 @@ import "./Footer.css";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <section className="footer">
+    <footer className="footer page__footer">
       <div className="footer__container">
-        <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
+        <h1 className="footer__title">
+          Учебный проект Яндекс.Практикум х BeatFilm.
+        </h1>
         <div className="footer__lists">
           <div className="footer__date">@ {currentYear}</div>
           <ul className="footer__list">
@@ -31,6 +33,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
