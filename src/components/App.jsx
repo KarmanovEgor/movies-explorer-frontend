@@ -10,7 +10,7 @@ import SavedMovies from "./SavedMovies/SavedMovies";
 import ErrorContext from "../Context/ErrorContext";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
 
   return (

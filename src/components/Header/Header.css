@@ -139,7 +139,6 @@
 .header__signup {
   margin-right: 30px;
   text-decoration: none;
-  font-family: Inter;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -157,7 +156,7 @@
   height: 32px;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Inter;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;

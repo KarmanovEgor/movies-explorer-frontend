@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="footer page__footer">
       <div className="footer__container">
-        <h1 className="footer__title">
+        <h2 className="footer__title">
           Учебный проект Яндекс.Практикум х BeatFilm.
-        </h1>
+        </h2>
         <div className="footer__lists">
           <div className="footer__date">@ {currentYear}</div>
           <ul className="footer__list">

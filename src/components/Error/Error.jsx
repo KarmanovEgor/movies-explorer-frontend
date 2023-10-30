@@ -4,7 +4,7 @@ import "./Error.css";
 export default function Error() {
   const navigate = useNavigate();
   return (
-    <main className="main">
+   
       <section className="error">
         <div className="error__container">
           <h1 className="error__title">404</h1>
@@ -14,6 +14,6 @@ export default function Error() {
           </Link>
         </div>
       </section>
-    </main>
+
   );
 }

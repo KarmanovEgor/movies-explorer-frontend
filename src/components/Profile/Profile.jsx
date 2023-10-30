@@ -12,6 +12,7 @@ export default function Profile({ name, setIsError, placeholder }) {
   return (
     <section className="profile">
       <Header />
+      <main className="main">
       <div className="profile__container">
         <h1 className="profile__title">{`Привет, ${name}!`}</h1>
         <Form
@@ -49,6 +50,7 @@ export default function Profile({ name, setIsError, placeholder }) {
           Выйти из аккаунта
         </Link>
       </div>
+      </main>
     </section>
   );
 }

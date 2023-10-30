@@ -32,6 +32,8 @@ export default function Register({ name, onRegister, setIsError }) {
         name='email'
         type='email'
         title='E-mail'
+        minLength='2'
+        maxLength='30'
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
