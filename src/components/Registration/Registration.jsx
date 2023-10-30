@@ -18,6 +18,7 @@ export default function Register({ name, onRegister, setIsError }) {
         type='text'
         title='Имя'
         minLength='2'
+        maxLength='30'
         value={values.username}
         isInputValid={isInputValid.username}
         error={errors.username}
@@ -31,6 +32,8 @@ export default function Register({ name, onRegister, setIsError }) {
         name='email'
         type='email'
         title='E-mail'
+        minLength='2'
+        maxLength='30'
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
@@ -45,6 +48,7 @@ export default function Register({ name, onRegister, setIsError }) {
         type='password'
         title='Пароль'
         minLength='3'
+        maxLength='10'
         value={values.password}
         isInputValid={isInputValid.password}
         error={errors.password}

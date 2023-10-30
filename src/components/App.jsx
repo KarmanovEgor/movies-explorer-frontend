@@ -1,22 +1,21 @@
 import Header from "../components/Header/Header";
-
 import Footer from "./Footer/Footer";
-
 import { Navigate, Route, Routes } from "react-router-dom";
-
 import "./page__content.css";
 import Main from "./Main/Main";
 import { useState } from "react";
 import Movies from "./Movies/Movies";
 import Profile from "./Profile/Profile";
 import SavedMovies from "./SavedMovies/SavedMovies";
+import ErrorContext from "../Context/ErrorContext";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
 
   return (
     <div className="page__content">
+      <ErrorContext.Provider value={isError}>
       <Routes>
         <Route
           path="/signin"
@@ -77,6 +76,7 @@ function App() {
           }
         />
       </Routes>
+      </ErrorContext.Provider>
     </div>
   );
 }

@@ -1,7 +1,6 @@
-.promo__size {
+.page__promo {
     display: flex;
     justify-content: center;
-    max-width: 1280px;
     width: 100%;
     background-color: var(--blue-color);
     order: 1;
@@ -25,10 +24,10 @@
     color: white;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 47px;
+    padding-top: 50px;
     padding-bottom: 102px;
     line-height: 52px;
-    letter-spacing: -1.6px;
+    letter-spacing: -2.1px;
     font-style: normal;
     font-weight: 400;
 }
@@ -41,7 +40,7 @@
     width: 722px;
     height: 244px;
     overflow: hidden;
-    
+
 }
 
 @media (max-width: 1140px) {
@@ -50,6 +49,7 @@
     }
 
 }
+
 @media (max-width: 1023px) {
     .promo__container {
         width: calc(320px + (960 - 320) * ((100vw - 320px)/(1024 - 320)));
@@ -57,19 +57,20 @@
 
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
     .promo__container {
         width: calc(320px + (668 - 320) * ((100vw - 320px)/(768 - 320)));
         justify-content: center;
         align-items: center;
-        padding-bottom: 57px;
-        
+        padding-bottom: 55px;
+        padding-top: 3px;
+
     }
 
     .promo__text {
         box-sizing: border-box;
         text-align: center;
-        letter-spacing: 0.029px;
+        letter-spacing: -1.52px;
         padding-top: 298px;
         padding-bottom: 140px;
     }
@@ -81,28 +82,39 @@
         padding: 130px 0px 60px 0px;
         align-self: center;
         background-position: center;
-       
+
+    }
 }
-}
+
 @media (max-width: 320px) {
     .promo__container {
         width: 284px;
         padding-bottom: 40px;
     }
+
     .promo__img {
         width: 320px;
         padding: 140px 0px 70px 0px;
         height: 230px;
-       
+
         background-position: center;
-       
+
+    }
+
+    .promo__text {
+        letter-spacing: -1.709px;
+        padding-top: 180px;
+        padding-bottom: 59px;
+        font-size: 31px;
+        line-height: 39px;
+        max-width: 300px;
+        width: 100%;
+
+    }
 }
-.promo__text {
-    letter-spacing: -0.19px;
-    padding-top: 182px;
-    padding-bottom: 59px;
-    font-size: 31px;
-    line-height: 39px;
- 
-}
-}
+@media (max-width: 400px) {
+    .promo__container {
+      width: calc(320px + (350 - 320) * ((100vw - 320px)/(400 - 320)));
+  
+    }
+  }

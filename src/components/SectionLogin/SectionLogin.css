@@ -15,6 +15,7 @@
     height: 38px;
     background-image: url(../../images/logo.svg);
     transition: opacity .3s linear;
+    
   }
 
   
@@ -59,9 +60,6 @@
       padding-top: 56px;
       width: calc(260/320*100%);
     }
-    .login__link-home {
-        margin: 0 auto;
-      }
       .login__title {
         text-align: center;
         margin-top: 50px;

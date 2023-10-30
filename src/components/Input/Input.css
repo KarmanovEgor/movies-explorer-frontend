@@ -5,7 +5,7 @@
   }
   
   .login__subtitle {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 10px;
     font-weight: 400;
     line-height: normal;
@@ -15,13 +15,13 @@
   .login__input {
     background-color: transparent;
     border: none;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #2F2F2F;
+    border-bottom: 1px solid gray;
+    padding: 0px 0 9px 0;
     font-size: 13px;
     font-weight: 400;
     line-height: normal;
     color: var(--first-font-color);
+    
   }
   
   .login__input_invaid {
@@ -39,6 +39,7 @@
     font-weight: 400;
     line-height: normal;
     color: #EE3465;
+    padding-top: 4px;
   }
   
 
@@ -87,3 +88,5 @@
     margin-bottom: 17px;
     border-bottom: 1px solid #424242;
   }
+ 
+  
