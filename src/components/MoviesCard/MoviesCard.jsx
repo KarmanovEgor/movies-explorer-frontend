@@ -1,18 +1,24 @@
 import "./MoviesCard.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export default function MoviesCard({ onDelete, addMovie, data, savedMovies }) {
+export default function MoviesCard({ onDelete, createMovie, data, savedMovies }) {
   const { pathname } = useLocation();
   const [click, setClick] = useState(false);
 
   console.log(data);
+  useEffect(() => {
+    if (pathname === '/movies')
+      setClick(savedMovies.some(element => data.id === element.movieId))
+  }, [savedMovies, data.id, setClick, pathname])
 
   function onClick() {
-    if (click === false) {
+    if (savedMovies.some(element => data.id === element.movieId)) {
       setClick(true);
+      createMovie(data)
     } else {
       setClick(false);
+      createMovie(data)
     }
   }
 
@@ -49,6 +55,7 @@ export default function MoviesCard({ onDelete, addMovie, data, savedMovies }) {
               <button
                 type="button"
                 className={`movies__save movies__save_type_delete`}
+                onClick={() => onDelete(data._id)}
               ></button>
             )}
           </div>

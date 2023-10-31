@@ -4,11 +4,21 @@ import "./Profile.css";
 import Input from "../Input/Input";
 import useFormValidation from "../utils/useFormValidation";
 import Header from "../Header/Header";
+import { useContext, useEffect } from "react";
+import CurrentUserContext from "../../Context/CurrentUserContext ";
 
-export default function Profile({ name, setIsError, placeholder }) {
+export default function Profile({ name, setIsError, placeholder, logOut, editUserData, isSuccess, setSuccess, setIsEdit, isEdit }) {
+  const currentUser = useContext(CurrentUserContext)
   const { values, errors, isInputValid, isValid, handleChange, reset } =
     useFormValidation();
-    console.log(placeholder)
+    useEffect(() => {
+      reset({ username: currentUser.name, email: currentUser.email })
+    }, [reset, currentUser, isEdit])
+  
+    function onSubmit(evt) {
+      evt.preventDefault()
+      editUserData(values.username, values.email)
+    }
   return (
     <section className="profile">
       <Header />
@@ -19,7 +29,12 @@ export default function Profile({ name, setIsError, placeholder }) {
           name={name}
           isValid={isValid}
           setIsError={setIsError}
-          values={values}
+          values={values}  
+          onSubmit={onSubmit}
+          isSuccess={isSuccess}
+          setSuccess={setSuccess}
+          setIsEdit={setIsEdit}
+          isEdit={isEdit}
         >
           <Input
             selectname={name}
@@ -32,6 +47,7 @@ export default function Profile({ name, setIsError, placeholder }) {
             isInputValid={isInputValid.username}
             error={errors.username}
             onChange={handleChange}
+            isEdit={isEdit}
             placeholder='введите ваше имя'
           />
           <Input
@@ -43,10 +59,11 @@ export default function Profile({ name, setIsError, placeholder }) {
             isInputValid={isInputValid.email}
             error={errors.email}
             onChange={handleChange}
+            isEdit={isEdit}
             placeholder='введите ваш email'
           />
         </Form>
-        <Link to="/" className="profile__link">
+        <Link to="/" className="profile__link"  onClick={logOut}>
           Выйти из аккаунта
         </Link>
       </div>
