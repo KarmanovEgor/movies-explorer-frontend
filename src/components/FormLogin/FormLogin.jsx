@@ -1,7 +1,9 @@
 import "./FormLogin.css";
 import Preloader from "../Preloader/Preloader";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ErrorContext from "../../Context/ErrorContext";
+import CurrentUserContext from "../../Context/CurrentUserContext ";
+import { useLocation } from "react-router-dom";
 
 export default function Form({
   name,
@@ -12,9 +14,23 @@ export default function Form({
   setSuccess,
   setIsEdit,
   isEdit,
-  isSend,
+  setIsError,
+  values
 }) {
   const isError = useContext(ErrorContext);
+  const { pathname } = useLocation()
+  const {currentUser, isSend} = useContext(CurrentUserContext)
+
+  useEffect(() => {
+    setIsError(false)
+  }, [setIsError, values])
+
+  useEffect(() => {
+    if (pathname === '/profile') {
+      setSuccess(false)
+      setIsEdit(false)
+    }
+  }, [setSuccess, setIsEdit, pathname])
 
   return (
     <form noValidate name={name} onSubmit={onSubmit}>
@@ -38,69 +54,36 @@ export default function Form({
             {isSend ? <Preloader name="button" /> : "Войти"}
           </button>
         </>
-      ) : name === "signup" ? (
+      ) : name === 'signup' ?
+      <>
+        <span className={`login__error-request login__error-request_type_reg ${isError && 'login__error-request_active'}`}>{'При регистрации пользователя произошла ошибка.'}</span>
+        <button
+          type="submit"
+          className={`login__submit ${isValid && !isError ? '' : 'login__submit_disabled'}`}
+          disabled={!isValid || isSend || isError}
+        >{isSend ? <Preloader name='button' /> : 'Зарегистрироваться'}</button>
+      </>
+      : !isEdit ?
         <>
-          <span
-            className={`login__error-request login__error-request_type_reg ${
-              isError && "login__error-request_active"
-            }`}
-          >
-            {"При регистрации произошла ошибка."}
-          </span>
-          <button
-            type="submit"
-            className={`login__submit login__submit-registr ${
-              isValid && !isError ? "" : "login__submit_disabled"
-            }`}
-            disabled={!isValid || isSend || isError}
-          >
-            {isSend ? <Preloader name="button" /> : "Зарегистрироваться"}
-          </button>
-        </>
-      ) : !isEdit ? (
-        <>
-          <span
-            className={`profile__error-request ${
-              isError
-                ? "profile__error-request_type_error"
-                : isSuccess && "profile__error-request_type_success"
-            }`}
-          >
-            {isError ? "При обновлении профиля произошла ошибка." : "Успешно"}
-          </span>
+          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? 'При обновлении профиля произошла ошибка.' : 'Успешно'}</span>
           <button
             type="button"
             className={`profile__submit `}
             onClick={() => {
-              setIsEdit(true);
-              setSuccess(false);
+              setIsEdit(true)
+              setSuccess(false)
             }}
-          >
-            {"Редактировать"}
-          </button>
-        </>
-      ) : (
+          >{'Редактировать'}</button>
+        </> :
         <>
-          <span
-            className={`profile__error-request ${
-              isError
-                ? "profile__error-request_type_error"
-                : isSuccess && "profile__error-request_type_success"
-            }`}
-          >
-            {isError ? "При обновлении профиля произошла ошибка." : "Успешно"}
-          </span>
+          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? 'При обновлении профиля произошла ошибка.' : 'Успешно'}</span>
           <button
             type="submit"
-            className={`login__submit ${
-              !isValid || isError ? "login__submit_disabled" : ""
-            }`}
+            className={`login__submit ${(values.username === currentUser.name && values.email === currentUser.email) || !isValid || isError ? 'login__submit_disabled' : ''}`}
             disabled={!isValid || isSend || isError}
-          >
-            {isSend ? <Preloader name="button" /> : "Сохранить"}
-          </button>
+          >{isSend ? <Preloader name='button' /> : 'Сохранить'}</button>
         </>
-      )}
+      }
     </form>
   );
 }

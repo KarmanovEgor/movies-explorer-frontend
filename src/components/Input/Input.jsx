@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import "./Input.css";
+import CurrentUserContext from "../../Context/CurrentUserContext ";
 
 export default function Input({
   selectname,
@@ -12,7 +14,11 @@ export default function Input({
   error,
   onChange,
   placeholder,
+  isEdit,
 }) {
+  
+  const isSend = useContext(CurrentUserContext);
+
   return (
     <>
       {selectname !== "profile" ? (
@@ -29,6 +35,7 @@ export default function Input({
                 : "login__input_invaid"
             }`}
             value={value || ""}
+            disabled={isSend}
             onChange={onChange}
             placeholder={placeholder}
             required
@@ -51,6 +58,8 @@ export default function Input({
               }`}
               value={value || ""}
               placeholder={placeholder}
+              disabled={isSend || !isEdit}
+              onChange={onChange}
               required
             />
           </label>

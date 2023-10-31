@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Burger.css";
 
-const Burger = ({ dataUser, onLogout }) => {
+const Burger = ({ dataUser, onlogout }) => {
   const [activeBurger, setActiveBurger] = useState(false);
   const { pathname } = useLocation();
 
