@@ -4,7 +4,7 @@ import Preloader from "../Preloader/Preloader"
 import './MoviesCardList.css'
 
 
-export default function MoviesCardList({ movies, isLoading }) {
+export default function MoviesCardList({ movies, isLoading, onDelete, savedMovies, serverError, createMovie }) {
   const [visibleCardsCount, setVisibleCardsCount] = useState(0);
   const [totalCardsCount, setTotalCardsCount] = useState(0);
 
@@ -16,7 +16,7 @@ export default function MoviesCardList({ movies, isLoading }) {
   }, [movies, totalCardsCount, visibleCardsCount]);
 
   function handleMoreButtonClick() {
-    const remainingCards = totalCardsCount - visibleCardsCount;
+    // const remainingCards = totalCardsCount - visibleCardsCount;
     const nextVisibleCardsCount = visibleCardsCount + getVisibleCardsCount();
     setVisibleCardsCount(nextVisibleCardsCount);
   }
@@ -45,7 +45,7 @@ export default function MoviesCardList({ movies, isLoading }) {
             <Preloader />
           ) : (
             movies.slice(0, visibleCardsCount).map((movie) => (
-              <MoviesCard key={movie.id} data={movie} savedMovies={[]} />
+              <MoviesCard key={movie.id} data={movie} savedMovies={savedMovies} createMovie={createMovie} />
             ))
           )}
           {!isLoading && movies.length === 0 && (

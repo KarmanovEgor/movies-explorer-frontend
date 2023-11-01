@@ -1,43 +1,65 @@
-import { useState } from "react";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import { useCallback, useEffect, useState } from "react";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Search from "../Search/Search";
-import moviesApi from "../utils/MoviesApi";
 
-export default function SavedMovies() {
-  const [isCheck, setIsCheck] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [movies, setMovies] = useState([]);
-  const [isError, setIsError] = useState(false);
 
-  function searchMovies(query) {
-    setIsLoading(true);
-    moviesApi
-      .getMovies(query)
-      .then((res) => {
-        setMovies(res);
-        setIsCheck(false);
-        setIsError(false);
-      })
-      .catch((err) => {
-        console.error(`Ошибка при поиске фильмов ${err}`);
-        setIsError(true);
-      })
-      .finally(() => setIsLoading(false));
+export default function SavedMovies({ savedMovie, onDelete, setIsError }) {
+
+// Состояние для отфильтрованных фильмов
+const [filteredMovies, setFilteredMovies] = useState(savedMovie)
+
+// Состояние для поискового запроса
+const [searchedMovie, setSearchedMovie] = useState('')
+
+// Состояние для чекбокса "Короткометражки"
+const [isCheck, setIsCheck] = useState(false)
+
+// Состояние для определения первого входа на страницу
+const [firstEntrance, setFirstEntrance] = useState(true)
+
+// Функция для фильтрации фильмов
+const filter = useCallback((search, isCheck, movies) => {
+  setSearchedMovie(search)
+  setFilteredMovies(movies.filter((movie) => {
+    const searchName = movie.nameRU.toLowerCase().includes(search.toLowerCase())
+    return isCheck ? (searchName && movie.duration <= 40) : searchName
+  }))
+}, [])
+
+// Функция для поиска фильмов
+function searchMovies(search) {
+  setFirstEntrance(false)
+  filter(search, isCheck, savedMovie)
+}
+
+// Эффект для обновления списка фильмов при изменении поискового запроса или чекбокса "Короткометражки"
+useEffect(() => {
+  if (savedMovie.length === 0) {
+    setFirstEntrance(true)
+  } else {
+    setFirstEntrance(false)
   }
+  filter(searchedMovie, isCheck, savedMovie)
+}, [filter, savedMovie, isCheck, searchedMovie])
+
   return (
     <>
-      <Header />
-      <main className="main">
-        <Search
-          isCheck={isCheck}
-          searchMovies={searchMovies}
-          setIsError={setIsError}
-        />
-        <MoviesCardList isLoading={isLoading} movies={movies} />
-      </main>
-      <Footer />
+      <Search
+        isCheck={isCheck}
+        searchMovies={searchMovies}
+        searchedMovie={searchedMovie}
+        setIsError={setIsError}
+        firstEntrance={firstEntrance}
+        savedMovie={savedMovie}
+        movies={savedMovie}
+        filter={filter}
+        setIsCheck={setIsCheck}
+      />
+      <MoviesCardList
+        movies={filteredMovies}
+        onDelete={onDelete}
+        firstEntrance={firstEntrance}
+      />
     </>
-  );
+  )
 }

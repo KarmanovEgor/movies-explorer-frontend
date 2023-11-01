@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import "./Input.css";
+import SendContext from "../../Context/SendContext";
+
 
 export default function Input({
   selectname,
@@ -12,10 +15,13 @@ export default function Input({
   error,
   onChange,
   placeholder,
+  isEdit,
 }) {
+  const isSend = useContext(SendContext);
+
   return (
     <>
-      {selectname !== "profile" ? (
+      {selectname !== "profile" ? 
         <label className="login__label">
           <span className="login__subtitle">{title}</span>
           <input
@@ -29,13 +35,14 @@ export default function Input({
                 : "login__input_invaid"
             }`}
             value={value || ""}
+            disabled={isSend}
             onChange={onChange}
             placeholder={placeholder}
             required
           />
           <span className="login__error">{error}</span>
         </label>
-      ) : (
+       : 
         <>
           <label className="profile__label">
             <span className="profile__subtitle">{title}</span>
@@ -51,6 +58,8 @@ export default function Input({
               }`}
               value={value || ""}
               placeholder={placeholder}
+              disabled={isSend || !isEdit}
+              onChange={onChange}
               required
             />
           </label>
@@ -62,7 +71,7 @@ export default function Input({
             {error}
           </span>
         </>
-      )}
+      }
     </>
   );
 }

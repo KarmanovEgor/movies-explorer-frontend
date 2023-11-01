@@ -1,4 +1,3 @@
-import promo from "../../images/promo.svg";
 import "./Promo.css";
 export default function Promo() {
   return (
