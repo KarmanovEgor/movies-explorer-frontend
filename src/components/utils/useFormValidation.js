@@ -25,12 +25,12 @@ export default function useFormValidation() {
     });
     setIsValid(form.checkValidity());
 }
-    function reset (obj = {}) {
+   const reset = useCallback ((obj = {}) => {
         setValues(obj)
         setError({})
         setIsInputValid({})
         setIsValid(false)
-    }
+    }, []);
     const setInitialData = useCallback((name, value) => {
         setValues((firstValues) => {
             return { ...firstValues, [name]: value };

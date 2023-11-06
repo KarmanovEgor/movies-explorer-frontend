@@ -3,14 +3,17 @@ import SectionLogin from "../SectionLogin/SectionLogin";
 import useFormValidation from '../utils/useFormValidation'
 
 
-export default function Register({ name, onRegister, setIsError }) {
+export default function Register({ name, onRegistration, setIsError }) {
   const { values, errors, isInputValid, isValid, handleChange, } = useFormValidation()
 
-  function onSubmit(evt) {
-    evt.preventDefault()
-    onRegister(values.username, values.email, values.password)
-  }
-
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    onRegistration(values.username, values.email, values.password);
+  };
+  const handleInputChange = (evt) => {
+    handleChange(evt);
+    setIsError(false);
+  };
   return (
     <SectionLogin name={name} isValid={isValid} onSubmit={onSubmit} setIsError={setIsError}>
       <Input
@@ -18,26 +21,23 @@ export default function Register({ name, onRegister, setIsError }) {
         type='text'
         title='Имя'
         minLength='2'
+        maxLength='30'
         value={values.username}
         isInputValid={isInputValid.username}
         error={errors.username}
-        onChange={(evt) => {
-          handleChange(evt)
-          setIsError(false)
-        }}
+        onChange={handleInputChange}
         placeholder='Введите ваше имя'
       />
       <Input
         name='email'
         type='email'
         title='E-mail'
+        minLength='2'
+        maxLength='30'
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
-        onChange={(evt) => {
-          handleChange(evt)
-          setIsError(false)
-        }}
+        onChange={handleInputChange}
         placeholder='Введите вашу электронную почту'
       />
       <Input
@@ -45,13 +45,11 @@ export default function Register({ name, onRegister, setIsError }) {
         type='password'
         title='Пароль'
         minLength='3'
+        maxLength='10'
         value={values.password}
         isInputValid={isInputValid.password}
         error={errors.password}
-        onChange={(evt) => {
-          handleChange(evt)
-          setIsError(false)
-        }}
+        onChange={handleInputChange}
         placeholder='Введите ваш пароль'
       />
     </SectionLogin>

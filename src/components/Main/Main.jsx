@@ -11,7 +11,21 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Movies from "../Movies/Movies";
 import "./Main.css";
 
-export default function Main({ name, setIsError }) {
+export default function Main({
+  name,
+  setIsError,
+  onRegistration,
+  onLogin,
+  logout,
+  editUserData,
+  savedMovies,
+  onDelete,
+  createMovie,
+  isSuccess,
+  setSuccess,
+  setIsEdit,
+  isEdit,
+}) {
   return (
     <main className="main">
       {
@@ -25,18 +39,45 @@ export default function Main({ name, setIsError }) {
               <Portfolio />
             </>
           ),
-          signin: <Login name={name} setIsError={setIsError} />,
-          signup: <Registration name={name} setIsError={setIsError} />,
+          signin: (
+            <Login name={name} setIsError={setIsError} onLogin={onLogin} />
+          ),
+          signup: (
+            <Registration
+              name={name}
+              setIsError={setIsError}
+              onRegistration={onRegistration}
+            />
+          ),
           error: <Error />,
-          profile: <Profile name={name} setIsError={setIsError} />,
+          profile: (
+            <Profile
+              name={name}
+              setIsError={setIsError}
+              logout={logout}
+              editUserData={editUserData}
+              isSuccess={isSuccess}
+              setSuccess={setSuccess}
+              setIsEdit={setIsEdit}
+              isEdit={isEdit}
+            />
+          ),
           movies: (
             <>
-              <Movies setIsError={setIsError} />
+              <Movies
+                setIsError={setIsError}
+                savedMovies={savedMovies}
+                createMovie={createMovie}
+              />
             </>
           ),
-          savedmovies: (
+          savedMovies: (
             <>
-              <SavedMovies setIsError={setIsError} />
+              <SavedMovies
+                setIsError={setIsError}
+                savedMovies={savedMovies}
+                onDelete={onDelete}
+              />
             </>
           ),
         }[name]

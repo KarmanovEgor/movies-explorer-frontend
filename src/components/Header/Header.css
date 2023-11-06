@@ -1,228 +1,144 @@
-.header {
-  max-width: 1280px;
+.page__header {
   width: 100%;
-  
+  display: flex;
+  justify-content: center;
+
 }
-.header-blue{
+
+.header__link-home {
+  display: block;
+  width: 38px;
+  height: 38px;
+  background-image: url(../../images/logo.svg);
+  transition: opacity .3s linear;
+
+}
+
+.header_theme_blue {
   background-color: var(--blue-color);
 }
-.header-black{
+
+.header_theme_black {
   background-color: var(--dark-color);
 }
-.header__container {
-    max-width: 1140px;
-    width: 100%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 74px;
-  
-    background-color: transparent;
-  }
 
-.header__logo {
-  margin: 0;
+.header__container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+
+  background-color: transparent;
 }
+
+
 
 .header__navigation {
   display: flex;
-  justify-content: center;
-  max-width: 1057px;
+  justify-content: end;
+  box-sizing: border-box;
+  max-width: 1058px;
   width: 100%;
+
 }
 
-.header__links_navigation{
+.header__lists {
   display: flex;
   justify-content: space-between;
   padding: 0;
   list-style: none;
   align-items: center;
-  max-width: 1057px;
   width: 100%;
-  
+
 }
 
 .header__links {
   color: white;
   font-size: 13px;
 }
-.header__link{
+
+.header__link {
   text-decoration: none;
   color: var(--first-font-color);
+  font-size: 13px;
+  line-height: 12px;
+  letter-spacing: 0.05px;
+  transition: opacity .3s linear;
 }
+
+.header__icon-prof {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #313131;
+  background-image: url(../../images/logo__profile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 4px;
+}
+
+.header__link-prof {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .header__links-main {
   display: none;
 }
-.header__links_movies{
+
+.header__items_movies {
   max-width: 211px;
   width: 100%;
   padding: 0;
 }
-.header__links_movies-list{
+
+.header__movies-list {
   display: flex;
   justify-content: space-between;
   padding: 0;
   list-style: none;
 }
-.header__links_movies-list-active {
+
+.header__movies-list-active {
   display: none;
 }
-.header__links_profile{
+
+.header__items_profile {
   max-width: 100px;
   width: 100%;
 }
-.header__links_profile-list {
+
+.header__profile {
   list-style: none;
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
   padding: 0;
- 
-} 
-.header__logo-profile {
-  border-radius: 50%;
-  height: 26px;
-  width: 26px;
-  background-color: transparent;
-  background-image: url('../../images/logo__profile.svg');
-  background-repeat: no-repeat;
-  background-position: center;
- 
+
 }
+
 .header__button {
   border: none;
   background-color: transparent;
-  
+
 }
-.header__links-navigation_login{
+
+.header__links-navigation_login {
   display: flex;
   justify-content: space-between;
   padding: 0;
   list-style: none;
   align-items: center;
-  max-width: 1057px;
-  width: 100%;
-}
-@media (max-width: 1140px) {
-  .header__container {
-    width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
-  }
-  .header__links_navigation{
-    width: calc(320px + (1015 - 320) * ((100vw - 320px)/(1140 - 320)));
-    
-  }
-  .header__links-navigation_login{
-    width: calc(320px + (1015 - 320) * ((100vw - 320px)/(1140 - 320)));
-  }
-}
-/* Медиа-запрос для экрана шириной 1024px */
-@media (max-width: 1023px) {
-  .header__container {
-    width: calc(320px + (960 - 320) * ((100vw - 320px)/(1024 - 320)));
-  }
-  .header__links_navigation{
-    width: calc(320px + (860 - 320) * ((100vw - 320px)/(1024 - 320)));
-    
-  }
-  .header__links-navigation_login{
-    width: calc(320px + (860 - 320) * ((100vw - 320px)/(1024 - 320)));
-  }
-}
 
-/* Медиа-запрос для экрана шириной 768px */
-@media (max-width: 769px) {
-  .header__container {
-    width: calc(320px + (708 - 320) * ((100vw - 320px)/(768 - 320)));
-  }
-  .header__navigation{
-    display: flex;
-    justify-content: end;
-    position: relative;
-   
-  }
-  .header__links-navigation_login{
-    max-width: 190px;
-    width: 100%;
-  }
-  .header__links_navigation {
-    position: fixed;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-size: 18px;
-      line-height: 22px;
-      opacity: 0;
-      background-color: var(--dark-color);
-      text-align: center;
-      transform: translate(-50%, -0);
-      top: 0;
-      left: 67%;
-      bottom: 0;
-      max-width: 520px;
-      width: 100%;
-      height: 100vh;
-      z-index: 10;
-      transform: translateX(50%);
-      transition: transform 0.7s ease;
-    }
-    .header__links{
-      font-size: 18px;
-    }
-    .header__links-main {
-      display: block;
-    }
-    .header__links-underline {
-      border-bottom: 1px solid var(--first-font-color); 
-      max-width: 72px;
-      width: 100%;
-    }
-    .header__links_movies-list{
-      align-items: center;
-      justify-content: center;
-      row-gap: 28px;
-    }
-      .header__links_navigation-active {
-        opacity: 1;
-        transform: translateX(-50%);
-      }
-      .header__links_movies-list{
-        display: flex;
-        box-sizing: border-box;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0;
-        list-style: none;
-        padding-bottom: 621px;
-      }
-   
-}
-
-
-/* Медиа-запрос для экрана шириной 320px */
-@media (max-width: 320px) {
-  .header__container {
-    width: calc(292px + (100vw - 320px) * (292 - 320) / (768 - 320));
-  }
-  .header__links_navigation {
-    max-width: 320px;
-      width: 100%;
-      left: 50%;
-      
-  }
-  .header__links_movies-list{
-    padding-bottom: 444px;
-    padding-top: 159px;
-   }
 }
 
 .header__signup {
   margin-right: 30px;
   text-decoration: none;
-  font-family: Inter;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -230,24 +146,17 @@
   transition: opacity .3s linear;
 }
 
-@media screen and (max-width:768px) {
-  .header__signup {
-    margin-right: 14px;
-    font-size: 10px;
-  }
-}
-
 .header__signin {
   text-align: center;
   padding-top: 8px;
-  background-color: #3DDC84;
+  background-color: var(--green-color);
   display: block;
   border-radius: 3px;
   width: 76px;
-  min-height: 32px;
+  height: 32px;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Inter;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -255,11 +164,240 @@
   transition: opacity .3s linear;
 }
 
-@media screen and (max-width:768px) {
+@media (hover: hover) and (pointer: fine) {
+  .header__signin:hover {
+    opacity: .7;
+  }
+
+  .header__signup:hover {
+    opacity: .7;
+  }
+
+  .header__link:hover {
+    opacity: .7;
+  }
+}
+
+.header__link:active {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 1140px) {
+  .header__container {
+    width: calc(320px + (1095 - 320) * ((100vw - 320px)/(1140 - 320)));
+  }
+
+  .header__navigation {
+    width: calc(320px + (1015 - 320) * ((100vw - 320px)/(1140 - 320)));
+
+  }
+
+  .header__links-navigation_login {
+    max-width: 190px;
+  }
+}
+
+/* Медиа-запрос для экрана шириной 1024px */
+@media (max-width: 1023px) {
+  .header__container {
+    width: calc(320px + (960 - 320) * ((100vw - 320px)/(1024 - 320)));
+  }
+
+  .header__navigation {
+    width: calc(320px + (860 - 320) * ((100vw - 320px)/(1024 - 320)));
+
+  }
+
+  .header__links-navigation_login {
+    max-width: 190px;
+  }
+}
+
+/* Медиа-запрос для экрана шириной 768px */
+@media (max-width: 768px) {
+  .header__container {
+    width: calc(320px + (708 - 320) * ((100vw - 320px)/(768 - 320)));
+  }
+
+  .header__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 33%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9;
+  }
+
+  .header__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9;
+    transform: translateX(100%);
+    transition: opacity 3s ease-in-out;
+  }
+
+  .header__overlay-active {
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translateX(-0%);
+  }
+
+  .header__navigation {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    width: calc(320px + (670 - 320) * ((100vw - 320px)/(768 - 320)));
+
+  }
+
+  .header__links-navigation_login {
+    max-width: 190px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .header__lists {
+    position: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 22px;
+    opacity: 0;
+    background-color: var(--dark-color);
+    text-align: center;
+    top: 0;
+    left: 67%;
+    bottom: 0;
+    max-width: 532px;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    transform: translateX(50%);
+    transition: transform 0.7s ease;
+  }
+
+  .header__link {
+    font-size: 18px;
+  }
+
+  .header__link-prof {
+    font-size: 11px;
+  }
+
+  .header__links-main {
+    display: block;
+  }
+
+  .header__movies-list {
+    align-items: center;
+    justify-content: center;
+    row-gap: 28px;
+  }
+
+  .header__lists_active {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  .header__movies-list {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 621px;
+    padding-top: 78px;
+    margin-right: 9px;
+  }
+
+  .header__signup {
+    font-size: 12px;
+    margin-right: 30px;
+  }
+
   .header__signin {
-    padding-top: 4px;
-    width: 54px;
-    min-height: 26px;
+    width: 76px;
+    font-size: 12px;
+    height: 32px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .header__navigation {
+    width: calc(290px + (100vw - 320px) * (290 - 320) / (768 - 320));
+
+  }
+
+}
+
+@media (max-width: 400px) {
+  .header__container {
+    width: calc(320px + (350 - 320) * ((100vw - 320px)/(400 - 320)));
+
+  }
+}
+
+/* Медиа-запрос для экрана шириной 320px */
+@media (max-width: 320px) {
+  .header__container {
+    width: calc(290px + (100vw - 320px) * (290 - 320) / (768 - 320));
+  }
+
+  .header__navigation {
+    width: calc(257px + (100vw - 320px) * (257 - 320) / (400 - 320));
+
+  }
+
+  .header__lists {
+    max-width: 320px;
+    width: 100%;
+    left: 50%;
+
+  }
+
+  .header__movies-list {
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+
+  .header__signup {
+    margin-right: 14px;
     font-size: 10px;
+
+  }
+
+  .header__signin {
+    width: 53px;
+    font-size: 10px;
+    height: 26px;
+    padding-top: 4px;
+
+  }
+
+  .header__link-prof {
+    font-size: 13px;
+    margin-top: 435px;
+    padding-top: 10px;
+  }
+
+  .header__movies-list {
+    align-items: center;
+    justify-content: center;
+    row-gap: 24px;
+    margin-top: 117px;
+    margin-right: 0px;
   }
 }

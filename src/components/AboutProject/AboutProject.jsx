@@ -2,7 +2,7 @@ import Title from "../Title/Title";
 import "./AboutProject.css";
 export default function AboutProject() {
   return (
-    <section className="about">
+    <section className="about page__about">
       <div className="about__size">
       <Title title="О проекте"></Title>
         <div className="about__container">
