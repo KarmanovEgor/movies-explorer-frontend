@@ -234,7 +234,7 @@ function App() {
                     <ProtectedRoute
                       element={ProtectedMain}
                       name="savedMovies"
-                      onDelete={toggleMovie}
+                      onDelete={handleDeleteMovie}
                       savedMovies={savedMovies}
                       loggedIn={loggedIn}
                       setIsError={setIsError}

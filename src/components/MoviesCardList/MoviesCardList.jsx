@@ -66,17 +66,17 @@ export default function MoviesCardList({
               <MoviesCard key={data._id} onDelete={onDelete} data={data} />
             ))
           ) : serverError ? (
-            <span className="gallery__serch-error">
+            <span className="movies__serch-error">
               «Во время запроса произошла ошибка. Возможно, проблема с
               соединением или сервер недоступен. Подождите немного и попробуйте
               ещё раз»
             </span>
           ) : pathname === "/movies" ? (
-            <span className="gallery__serch-error">
+            <span className="movies__serch-error">
               «Чтобы увидеть список фильмов выполните поиск»
             </span>
           ) : (
-            <span className="gallery__serch-error">
+            <span className="movies__serch-error">
               «Нет сохранённых фильмов»
             </span>
           )}

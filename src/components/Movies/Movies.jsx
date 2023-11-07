@@ -27,15 +27,12 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
       })
     );
   }, []);
-  console.log(setFilteredMovies);
-
-  console.log(filterMovies);
 
   // Функция для поиска фильмов
   function searchMovies(search) {
-    setIsLoading(true);
     // Если список фильмов пустой, то загружаем его с сервера
     if (allMovies.length === 0) {
+      setIsLoading(true);
       moviesApi
         .getMovies()
         .then((res) => {
@@ -53,7 +50,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
       filterMovies(search, isCheck, allMovies);
     }
   }
-  console.log(allMovies);
+
   // Загрузка данных из LocalStorage при монтировании компонента
   useEffect(() => {
     if (localStorage.allmovies && localStorage.shorts && localStorage.movie) {

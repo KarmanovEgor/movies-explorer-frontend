@@ -11,7 +11,7 @@ export default function MoviesCard({
   const { pathname } = useLocation();
   const [click, setClick] = useState(false);
 
-  console.log(data);
+
   useEffect(() => {
     if (pathname === "/movies")
       setClick(savedMovies.some((element) => data.id === element.movieId));
@@ -42,8 +42,7 @@ export default function MoviesCard({
       <article className="movies__article">
         <Link to={data.trailerLink} target="_blank">
           <img
-            src={`https://api.nomoreparties.co${data.image.url}`}
-            alt={`изображение фильма ${data.image.name}`}
+            src={pathname === '/movies' ? `https://api.nomoreparties.co${data.image.url}` : data.image} alt={data.name} 
             className="movies__image"
           />
         </Link>
