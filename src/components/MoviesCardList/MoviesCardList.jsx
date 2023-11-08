@@ -48,9 +48,12 @@ export default function MoviesCardList({
     <section className="movies page__movies">
       <div className="movies__container">
         <ul className="movies__lists">
-          {isLoading ? (
+        {isLoading ? (
             <Preloader />
-          ) : pathname === "/movies" ? (
+          ) : movies.length === 0 ? (
+            <span className="movies__serch-error">
+              «Ничего не найдено»
+            </span>) : pathname === "/movies" ? (
             movies
               .slice(0, visibleCardsCount)
               .map((movie) => (

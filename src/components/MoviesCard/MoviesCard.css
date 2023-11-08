@@ -24,6 +24,7 @@
     margin: 0;
     box-sizing: border-box;
     padding-top: 11px;
+    overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 13px;

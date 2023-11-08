@@ -4,7 +4,9 @@ import "./Profile.css";
 import Input from "../Input/Input";
 import useFormValidation from "../utils/useFormValidation";
 import { useContext, useEffect } from "react";
+
 import CurrentUserContext from "../../Context/CurrentUserContext ";
+import { emailValid } from "../utils/validConfig";
 
 export default function Profile({ name, setIsError, logout, editUserData, isSuccess, setSuccess, setIsEdit, isEdit }) {
   const currentUser = useContext(CurrentUserContext)
@@ -23,7 +25,7 @@ export default function Profile({ name, setIsError, logout, editUserData, isSucc
 
       <main className="main">
       <div className="profile__container">
-        <h1 className="profile__title">{`Привет, ${name}!`}</h1>
+        <h1 className="profile__title">{`Привет, ${currentUser.name}!`}</h1>
         <Form
           name={name}
           isValid={isValid}
@@ -57,6 +59,7 @@ export default function Profile({ name, setIsError, logout, editUserData, isSucc
             value={values.email}
             isInputValid={isInputValid.email}
             error={errors.email}
+            pattern={emailValid}
             onChange={handleChange}
             isEdit={isEdit}
             placeholder='введите ваш email'

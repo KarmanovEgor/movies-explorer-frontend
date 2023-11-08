@@ -4,6 +4,8 @@ import "./Search.css";
 import ErrorContext from "../../Context/ErrorContext";
 import { useContext, useEffect } from "react";
 import useFormValidation from "../utils/useFormValidation";
+import CurrentUserContext from "../../Context/CurrentUserContext ";
+
 
 export default function Search({
   isCheck,
@@ -14,12 +16,14 @@ export default function Search({
   movies,
   filter,
   setIsCheck,
+  name
 }) {
   // Получаем объект location из react-router-dom
   const { pathname } = useLocation();
 
   // Получаем значение isError из контекста ErrorContext
   const isError = useContext(ErrorContext);
+  const currentUser = useContext(CurrentUserContext)
 
   // Получаем значения для управляемой формы из хука useFormValidation
   const { values, handleChange, reset } = useFormValidation();
@@ -56,9 +60,9 @@ export default function Search({
     }
   }
   return (
-    <section className="search page__search" onSubmit={onSubmit}>
+    <section className="search page__search" >
       <div className="search__container">
-        <form className="search__form" name={"SearchForm"}>
+        <form noValidate className="search__form" name={"SearchForm"} onSubmit={onSubmit}>
           <div className="search__form-block">
             <input
               type="text"
@@ -87,8 +91,9 @@ export default function Search({
           </div>
           <FilterCheckbox isCheck={isCheck} changeShort={changeShort} />
         </form>
+        <span className={`search__error ${isError && 'search__error_active'}`}>{`${currentUser.name}, Введите поисковой запрос`}</span>
       </div>
-      {isError && <p>Введите поисковой запрос</p>}
+     
     </section>
   );
 }

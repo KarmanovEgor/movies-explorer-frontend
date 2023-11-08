@@ -1,10 +1,11 @@
 import Input from "../Input/Input";
 import SectionLogin from "../SectionLogin/SectionLogin";
 import useFormValidation from '../utils/useFormValidation'
+import { emailValid } from "../utils/validConfig";
 
 
 export default function Register({ name, onRegistration, setIsError }) {
-  const { values, errors, isInputValid, isValid, handleChange, } = useFormValidation()
+  const { values, errors, isInputValid, isValid, handleChange} = useFormValidation()
 
   const onSubmit = (evt) => {
     evt.preventDefault();
@@ -37,6 +38,7 @@ export default function Register({ name, onRegistration, setIsError }) {
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
+        pattern={emailValid}
         onChange={handleInputChange}
         placeholder='Введите вашу электронную почту'
       />

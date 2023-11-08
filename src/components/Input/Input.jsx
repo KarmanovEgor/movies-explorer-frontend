@@ -16,6 +16,7 @@ export default function Input({
   onChange,
   placeholder,
   isEdit,
+  pattern
 }) {
   const isSend = useContext(SendContext);
 
@@ -36,6 +37,7 @@ export default function Input({
             }`}
             value={value || ""}
             disabled={isSend}
+            pattern={pattern}
             onChange={onChange}
             placeholder={placeholder}
             required
@@ -57,6 +59,7 @@ export default function Input({
                   : "profile__input_invaid"
               }`}
               value={value || ""}
+              pattern={pattern}
               placeholder={placeholder}
               disabled={isSend || !isEdit}
               onChange={onChange}
