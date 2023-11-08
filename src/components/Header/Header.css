@@ -39,7 +39,7 @@
 
 .header__navigation {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   box-sizing: border-box;
   max-width: 1058px;
   width: 100%;
@@ -249,7 +249,7 @@
 
   .header__navigation {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     position: relative;
     width: calc(320px + (670 - 320) * ((100vw - 320px)/(768 - 320)));
 

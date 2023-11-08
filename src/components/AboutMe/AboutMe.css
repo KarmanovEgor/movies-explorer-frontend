@@ -22,9 +22,9 @@
 
 .aboutMe__blocktext {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .aboutMe__subtitle {
