@@ -66,6 +66,7 @@ export default function Search({
           <div className="search__form-block">
             <input
               type="text"
+              value={values.search || ''}
               name="search"
               placeholder="Фильм"
               className="search__input"

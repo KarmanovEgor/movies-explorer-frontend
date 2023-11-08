@@ -15,6 +15,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
   // Функция для фильтрации фильмов
   const filterMovies = useCallback((search, isCheck, movies) => {
     setSearchedMovie(search);
+    console.log(search)
     localStorage.setItem("movie", JSON.stringify(search));
     localStorage.setItem("shorts", JSON.stringify(isCheck));
     localStorage.setItem("allmovies", JSON.stringify(movies));
