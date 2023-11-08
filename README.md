@@ -11,4 +11,4 @@
 
 адресс пул-реквеста: https://github.com/KarmanovEgor/movies-explorer-frontend/pull/4
 
-адресс фронта: 
+адресс фронта: https://diplomkarmanov.nomoredomainsmonster.ru

@@ -1,7 +1,3 @@
-# movies-explorer-api
-
-
-
 ## Ссылки проекта:
 макет dark-1
 
@@ -12,3 +8,7 @@
 Моя канбан-доска: https://github.com/users/KarmanovEgor/projects/1/views/1
 
 Адресс бекенда: https://api.diplomkarmanov.nomoredomainsrocks.ru
+
+адресс пул-реквеста: https://github.com/KarmanovEgor/movies-explorer-frontend/pull/4
+
+адресс фронта: https://diplomkarmanov.nomoredomainsmonster.ru
