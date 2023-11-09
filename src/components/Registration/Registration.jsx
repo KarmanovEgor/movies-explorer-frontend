@@ -38,6 +38,7 @@ export default function Register({ name, onRegistration, setIsError }) {
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
+
         pattern={emailValid}
         onChange={handleInputChange}
         placeholder='Введите вашу электронную почту'

@@ -11,6 +11,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchedMovie, setSearchedMovie] = useState("");
   const [serverError, setServerError] = useState(false);
+  const [firstLogin, setFirstLogin] = useState(true)
 
   // Функция для фильтрации фильмов
   const filterMovies = useCallback((search, isCheck, movies) => {
@@ -39,6 +40,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
         .then((res) => {
           setAllMovies(res);
           setIsCheck(false);
+          setFirstLogin(false);
           setServerError(false);
           filterMovies(search, isCheck, res);
         })
@@ -61,6 +63,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
       setServerError(false);
       setSearchedMovie(search);
       setIsCheck(isCheck);
+      setFirstLogin(false);
       setAllMovies(movies);
       filterMovies(search, isCheck, movies);
     }
@@ -84,6 +87,7 @@ export default function Movies({ setIsError, createMovie, savedMovies }) {
           createMovie={createMovie}
           savedMovies={savedMovies}
           serverError={serverError}
+          firstLogin = {firstLogin}
         />
       </main>
     </>

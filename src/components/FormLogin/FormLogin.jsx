@@ -16,7 +16,7 @@ export default function Form({
   setIsEdit,
   isEdit,
   setIsError,
-  values
+  values,
 }) {
   const isError = useContext(ErrorContext);
   const { pathname } = useLocation()
@@ -58,7 +58,7 @@ export default function Form({
         </>
       ) : name === 'signup' ?
       <>
-        <span className={`login__error-request login__error-request_type_reg ${isError && 'login__error-request_active'}`}>{'При регистрации пользователя произошла ошибка.'}</span>
+        <span className={`login__error-request login__error-request_type_reg ${isError && 'login__error-request_active'}`}>{"Ошибка при регистрации"}</span>
         <button
           type="submit"
           className={`login__submit ${isValid && !isError ? '' : 'login__submit_disabled'}`}

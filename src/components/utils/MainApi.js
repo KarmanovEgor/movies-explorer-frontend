@@ -103,7 +103,7 @@ class ApiMain {
   
 
   const apiMain = new ApiMain({
-    baseUrl: 'https://api.diplomkarmanov.nomoredomainsrocks.ru',
+    baseUrl: 'https://api.diplomkarmanov.nomoredomainsrocks.ru'
     // baseUrl: 'http://localhost:3000'
   });
   

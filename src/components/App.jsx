@@ -98,13 +98,17 @@ function App() {
       }
     } catch (err) {
       setIsError(true);
-      console.error(`Ошибка при регистрации ${err}`);
+      console.log(err)
+      console.error(`Ошибка при регистрации ${err.message}`);
+     
     } finally {
       setIsSend(false);
     }
   }
+  
   function logout() {
     localStorage.clear();
+    
     setLoggedIn(false);
     navigate("/");
   }
