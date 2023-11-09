@@ -22,6 +22,7 @@ function App() {
   const [isCheckToken, setIsCheckToken] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+  const [errorMesseges, setErrorMessege] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -108,7 +109,6 @@ function App() {
   
   function logout() {
     localStorage.clear();
-    
     setLoggedIn(false);
     navigate("/");
   }
@@ -120,6 +120,8 @@ function App() {
       setIsSuccess(true);
       setIsEdit(false);
     } catch (err) {
+      debugger;
+      console.log(err)
       setIsError(true);
       console.error(`Ошибка при редактировании данных пользователя ${err}`);
     } finally {

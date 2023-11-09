@@ -64,43 +64,52 @@ export default function MoviesCardList({
   function handleMoreButtonClick() {
     setCountCard(countCard + createCards().step);
   }
-console.log(countCard)
-console.log(movies.length)
+  console.log(countCard);
+  console.log(movies.length);
 
   return (
     <section className="movies page__movies">
       <div className="movies__container">
-      <ul className="movies__lists">
-      {isLoading ? (
-  <Preloader />
-) : pathname === "/movies" ? (
-  movies.length === 0 ? (
-    firstLogin ? (
-      <span className="movies__serch-error">«выполните поиск»</span>
-    ) : (
-      <span className="movies__serch-error">«Ничего не найдено»</span>
-    )
-  ) : movies
-    .slice(0, countCard)
-    .map((movie) => (
-      <MoviesCard
-        key={movie.id}
-        data={movie}
-        savedMovies={savedMovies}
-        createMovie={createMovie}
-      />
-    ))
-) : pathname === "/saved-movies" ? (
-  movies.length === 0 ? (
-    <span className="movies__serch-error">«Нет сохранённых фильмов»</span>
-  ) : (
-    movies.map((data) => (
-      <MoviesCard key={data._id} onDelete={onDelete} data={data} />
-    ))
-  )
-) : null}
-  
-</ul>
+        <ul className="movies__lists">
+          {isLoading ? (
+            <Preloader />
+          ) : serverError ? (
+            <span className="movies__serch-error">
+              «Во время запроса произошла ошибка. Возможно, проблема с
+              соединением или сервер недоступен. Подождите немного и попробуйте
+              ещё раз»
+            </span>
+          ) : pathname === "/movies" ? (
+            movies.length === 0 ? (
+              firstLogin ? (
+                <span className="movies__serch-error">«выполните поиск»</span>
+              ) : (
+                <span className="movies__serch-error">«Ничего не найдено»</span>
+              )
+            ) : (
+              movies
+                .slice(0, countCard)
+                .map((movie) => (
+                  <MoviesCard
+                    key={movie.id}
+                    data={movie}
+                    savedMovies={savedMovies}
+                    createMovie={createMovie}
+                  />
+                ))
+            )
+          ) : pathname === "/saved-movies" ? (
+            movies.length === 0 ? (
+              <span className="movies__serch-error">
+                «Нет сохранённых фильмов»
+              </span>
+            ) : (
+              movies.map((data) => (
+                <MoviesCard key={data._id} onDelete={onDelete} data={data} />
+              ))
+            )
+          ) : null}
+        </ul>
         {pathname === "/movies" && (
           <button
             type="button"
