@@ -22,7 +22,7 @@ function App() {
   const [isCheckToken, setIsCheckToken] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
-  const [errorMesseges, setErrorMessege] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -99,7 +99,6 @@ function App() {
       }
     } catch (err) {
       setIsError(true);
-      console.log(err)
       console.error(`Ошибка при регистрации ${err.message}`);
      
     } finally {
@@ -120,14 +119,14 @@ function App() {
       setIsSuccess(true);
       setIsEdit(false);
     } catch (err) {
-      debugger;
-      console.log(err)
+      setErrorMessage(err);
       setIsError(true);
       console.error(`Ошибка при редактировании данных пользователя ${err}`);
     } finally {
       setIsSend(false);
     }
   }
+
   async function toggleMovie(data) {
     // Проверяю, есть ли в сохраненных фильмах элемент с таким же id, как у переданного фильма
     const checkAdd = savedMovies.some((element) => data.id === element.movieId);
@@ -205,6 +204,7 @@ function App() {
                       setIsError={setIsError}
                       isSuccess={isSuccess}
                       setSuccess={setSuccess}
+                      errorMessage={errorMessage}
                     />
                   }
                 />

@@ -64,8 +64,7 @@ export default function MoviesCardList({
   function handleMoreButtonClick() {
     setCountCard(countCard + createCards().step);
   }
-  console.log(countCard);
-  console.log(movies.length);
+
 
   return (
     <section className="movies page__movies">

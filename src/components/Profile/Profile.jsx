@@ -8,7 +8,7 @@ import { useContext, useEffect } from "react";
 import CurrentUserContext from "../../Context/CurrentUserContext ";
 import { emailValid } from "../utils/validConfig";
 
-export default function Profile({ name, setIsError, logout, editUserData, isSuccess, setSuccess, setIsEdit, isEdit }) {
+export default function Profile({ name, setIsError, logout, editUserData, isSuccess, setSuccess, setIsEdit, isEdit, errorMessage }) {
   const currentUser = useContext(CurrentUserContext)
   const { values, errors, isInputValid, isValid, handleChange, reset } =
     useFormValidation();
@@ -20,6 +20,7 @@ export default function Profile({ name, setIsError, logout, editUserData, isSucc
       evt.preventDefault()
       editUserData(values.username, values.email)
     }
+
   return (
     <section className="profile">
 
@@ -36,6 +37,7 @@ export default function Profile({ name, setIsError, logout, editUserData, isSucc
           setSuccess={setSuccess}
           setIsEdit={setIsEdit}
           isEdit={isEdit}
+          errorMessage={errorMessage}
         >
           <Input
             selectname={name}
@@ -61,6 +63,7 @@ export default function Profile({ name, setIsError, logout, editUserData, isSucc
             error={errors.email}
             pattern={emailValid}
             onChange={handleChange}
+            errorMessage={errorMessage}
             isEdit={isEdit}
             placeholder='введите ваш email'
           />

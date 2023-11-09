@@ -17,6 +17,7 @@ export default function Form({
   isEdit,
   setIsError,
   values,
+  errorMessage
 }) {
   const isError = useContext(ErrorContext);
   const { pathname } = useLocation()
@@ -58,7 +59,7 @@ export default function Form({
         </>
       ) : name === 'signup' ?
       <>
-        <span className={`login__error-request login__error-request_type_reg ${isError && 'login__error-request_active'}`}>{"Почта соответствует ранее сохраненному значению"}</span>
+        <span className={`login__error-request login__error-request_type_reg ${isError && 'login__error-request_active'}`}>{"При регистрации произошла ошибка."}</span>
         <button
           type="submit"
           className={`login__submit ${isValid && !isError ? '' : 'login__submit_disabled'}`}
@@ -67,7 +68,7 @@ export default function Form({
       </>
       : !isEdit ?
         <>
-          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? 'При обновлении профиля произошла ошибка.' : 'Успешно'}</span>
+          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? "При обновлении профиля произошла ошибка." && errorMessage : 'Успешно'}</span>
           <button
             type="button"
             className={`profile__submit `}
@@ -78,7 +79,7 @@ export default function Form({
           >{'Редактировать'}</button>
         </> :
         <>
-          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? 'При обновлении профиля произошла ошибка.' : 'Успешно'}</span>
+          <span className={`profile__error-request ${isError ? 'profile__error-request_type_error' : isSuccess && 'profile__error-request_type_success'}`}>{isError ? 'При обновлении профиля произошла ошибка.' && errorMessage  : 'Успешно'}</span>
           <button
             type="submit"
             className={`login__submit ${(values.username === currentUser.name && values.email === currentUser.email) || !isValid || isError ? 'login__submit_disabled' : ''}`}

@@ -39,10 +39,6 @@
     color: var(--secondary-font-color);
     pointer-events: none;
   }
-
-  .profile__error-request_type_error {
-    visibility: visible;
-  }
   
   .profile__error-request_type_success {
     visibility: visible;
@@ -83,7 +79,9 @@
     line-height: normal;
     color: #FF004C;
   }
-
+  .profile__error-request_type_error {
+    visibility: visible;
+  }
   
   @media screen and (max-width: 768px) {
     .profile__error-request {

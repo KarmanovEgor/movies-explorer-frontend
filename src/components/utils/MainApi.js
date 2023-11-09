@@ -3,7 +3,15 @@ class ApiMain {
       this._url = options.baseUrl;
     }
   
-    _checkResponse(res) {return res.ok ? res.json() : Promise.reject(res.status)}
+    async _checkResponse(res) {
+      const data = await res.json();
+      if (res.ok) {
+        return data;
+      } else {
+        return Promise.reject(data.message);
+      }
+    } 
+
   
     _request(url, options) {
       return fetch(`${this._url}${url}`, options)

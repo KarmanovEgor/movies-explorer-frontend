@@ -25,7 +25,9 @@ export default function Main({
   setSuccess,
   setIsEdit,
   isEdit,
+  errorMessage
 }) {
+
   return (
     <main className="main">
       {
@@ -60,6 +62,7 @@ export default function Main({
               setSuccess={setSuccess}
               setIsEdit={setIsEdit}
               isEdit={isEdit}
+              errorMessage={errorMessage}
             />
           ),
           movies: (
